@@ -9,10 +9,16 @@ from llama_index import GPTSimpleVectorIndex
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper, ServiceContext
 from langchain import OpenAI
 
-data = './Test'
+
 index_file = 'index.json'
 
+@st.cache
+def load_data(nrows):
+    download = github_session.get(url).content
+    data = './Test'
+    return data
 
+data= load_data(1000)
 
 # load the .txt data and convert it into an index
 from llama_index import SimpleDirectoryReader
