@@ -13,5 +13,5 @@ from langchain import OpenAI
 from llama_index import SimpleDirectoryReader
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('/content/sample_data/Untitled Folder', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
