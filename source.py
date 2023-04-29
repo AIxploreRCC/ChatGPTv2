@@ -20,5 +20,5 @@ documents_txt = SimpleDirectoryReader('data').load_data()
 from llama_index import SimpleDirectoryReader
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader(data, recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('data', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
