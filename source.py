@@ -1,8 +1,6 @@
 import os
 import openai
 import streamlit as st
-openai.api_key = st.secrets['key']
-
 
 os.environ['OPENAI_API_KEY'] = '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'
 
@@ -32,3 +30,11 @@ service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor, prom
 index = GPTSimpleVectorIndex.from_documents(
     documents, service_context=service_context
 )
+
+# Define a simple Streamlit app
+st.title("Ask Llama")
+query = st.text_input("What would you like to ask?", "")
+
+if st.button("Submit"):
+    response = index.query(query)
+    st.write(response)
