@@ -16,19 +16,10 @@ index_file = 'index.json'
 def load_indexes():
     """load the pipeline object for preprocessing and the ml model"""
 
-    # load index files 
-    
-    index_document = GPTSimpleVectorIndex.load_from_disk('index_file.json')
+# load index files
 
-    return index_video
+index_file = load('index.json')
+index_file = load('index.json')
 
+   
 
-
-# load indices
-index_document = load_indexes()
-
-st.header('Custom-Made Chatbots')
-
-# select the data to write queries for
-st.write("Select the data that your chatbot should be trained with:")
-data = st.selectbox('Data', ('.txt file (My favorite fruits)'))
