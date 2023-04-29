@@ -9,7 +9,7 @@ from llama_index import GPTSimpleVectorIndex
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper, ServiceContext
 from langchain import OpenAI
 
-data = 'EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf'
+data = 'Test'
 index_file = 'index.json'
 
 from llama_index import SimpleDirectoryReader
