@@ -9,11 +9,7 @@ from llama_index import GPTSimpleVectorIndex
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper, ServiceContext
 from langchain import OpenAI
 
-from joblib import load
-# load index files
 
-index_file = load('index.json')
-data = load('EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf')
 
    
 
