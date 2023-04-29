@@ -32,13 +32,9 @@ def main():
 
     # select the data to write queries for
     st.write("Select the data that your chatbot should be trained with:")
-    data = st.selectbox('Data', ('.txt file (My favorite fruits)', 'Youtube Video (Vanilla Cake Recipe)', 'Wikipedia Article (Apple)'))
+    data = st.selectbox('Data', ('.txt file (My favorite fruits)'))
 
-    # use the index based on the selected data
-    data == '.txt file (My favorite fruits)':
-        st.image('fruit.png')
-        index = index_document
-  
+   
 
     # query the selected index
     query = st.text_input('Enter Your Query')
