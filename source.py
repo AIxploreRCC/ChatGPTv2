@@ -39,3 +39,6 @@ def main():
     # query the selected index
     query = st.text_input('Enter Your Query')
     button = st.button(f'Response')
+    
+if __name__ == '__main__':
+    main()
