@@ -3,6 +3,9 @@ import openai
 import streamlit as st
 openai.api_key = st.secrets['key']
 
+
+os.environ['OPENAI_API_KEY'] = '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'
+
 from llama_index import download_loader
 from llama_index.node_parser import SimpleNodeParser
 from llama_index import GPTSimpleVectorIndex
