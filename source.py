@@ -1,5 +1,5 @@
 import os
-os.environ["OPENAI_API_KEY"] = key
+os.environ["OPENAI_API_KEY"] = 'key'
 
 import streamlit as st
 from llama_index import download_loader
