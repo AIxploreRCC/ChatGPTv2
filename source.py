@@ -16,3 +16,9 @@ from llama_index import SimpleDirectoryReader
 
 # load the .txt data and convert it into an index
 documents_txt = SimpleDirectoryReader('data').load_data()
+
+from llama_index import SimpleDirectoryReader
+
+SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
+loader = SimpleDirectoryReader(data, recursive=True, exclude_hidden=True)
+documents = loader.load_data()
