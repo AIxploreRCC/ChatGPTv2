@@ -15,10 +15,10 @@ index_file = 'index.json'
 from llama_index import SimpleDirectoryReader
 
 # load the .txt data and convert it into an index
-documents_txt = SimpleDirectoryReader('data').load_data()
+documents_txt = SimpleDirectoryReader('EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf').load_data()
 
 from llama_index import SimpleDirectoryReader
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('data', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
