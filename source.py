@@ -19,7 +19,7 @@ def load_indexes():
 # load index files
 
 index_file = load('index.json')
-index_file = load('index.json')
+data = load('EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf')
 
    
 
