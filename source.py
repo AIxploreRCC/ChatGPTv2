@@ -12,11 +12,9 @@ from langchain import OpenAI
 data = 'Test'
 index_file = 'index.json'
 
-from llama_index import SimpleDirectoryReader
+
 
 # load the .txt data and convert it into an index
-documents_txt = SimpleDirectoryReader('EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf').load_data()
-
 from llama_index import SimpleDirectoryReader
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
