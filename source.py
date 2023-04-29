@@ -1,8 +1,10 @@
 import os
 import openai
 import streamlit as st
+from dotenv import load_dotenv
 
-os.environ['OPENAI_API_KEY'] = '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'
+# Load environment variables from the .env file
+load_dotenv()
 
 from llama_index import download_loader
 from llama_index.node_parser import SimpleNodeParser
