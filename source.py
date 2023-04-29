@@ -12,17 +12,46 @@ from langchain import OpenAI
 
 index_file = 'index.json'
 
-@st.cache
-def load_data(nrows):
-    download = github_session.get(url).content
-    data = './Test'
-    return data
+import streamlit as st
+from llama_index import GPTSimpleVectorIndex
+import os
+import config
 
-data= load_data(1000)
+@st.cache_resource
+def load_indexes():
+    """load the pipeline object for preprocessing and the ml model"""
 
-# load the .txt data and convert it into an index
-from llama_index import SimpleDirectoryReader
+    # load index files 
+    
+    index_document = GPTSimpleVectorIndex.load_from_disk('index_file.json')
 
-SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('data', recursive=True, exclude_hidden=True)
-documents = loader.load_data()
+    return index_video
+
+def main():
+
+    # api key
+    os.environ['OPENAI_API_KEY'] = 'key'
+
+    # load indices
+    index_document = load_indexes()
+
+    st.header('Custom-Made Chatbots')
+
+    # select the data to write queries for
+    st.write("Select the data that your chatbot should be trained with:")
+    data = st.selectbox('Data', ('.txt file (My favorite fruits)', 'Youtube Video (Vanilla Cake Recipe)', 'Wikipedia Article (Apple)'))
+
+    # use the index based on the selected data
+    if data == '.txt file (My favorite fruits)':
+        st.image('fruit.png')
+        index = index_document
+    elif data == 'Youtube Video (Vanilla Cake Recipe)':
+        st.image('cake.png')
+        index = index_video
+    elif data == 'Wikipedia Article (Apple)':
+        st.image('apple.jpeg')
+        index = index_wikepedia
+
+    # query the selected index
+    query = st.text_input('Enter Your Query')
+    button = st.button(f'Response')
