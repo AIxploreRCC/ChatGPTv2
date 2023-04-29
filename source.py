@@ -1,6 +1,9 @@
 import os
 os.environ["OPENAI_API_KEY"] = 'key'
 
+import openai
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
 import streamlit as st
 from llama_index import download_loader
 from llama_index.node_parser import SimpleNodeParser
