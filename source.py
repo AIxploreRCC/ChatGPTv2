@@ -4,7 +4,7 @@ import streamlit as st
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
-load_dotenv()
+load_dotenv(main.env)
 
 from llama_index import download_loader
 from llama_index.node_parser import SimpleNodeParser
