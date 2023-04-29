@@ -22,23 +22,13 @@ def load_indexes():
 
     return index_video
 
-def main():
 
 
-    # load indices
-    index_document = load_indexes()
+# load indices
+index_document = load_indexes()
 
-    st.header('Custom-Made Chatbots')
+st.header('Custom-Made Chatbots')
 
-    # select the data to write queries for
-    st.write("Select the data that your chatbot should be trained with:")
-    data = st.selectbox('Data', ('.txt file (My favorite fruits)'))
-
-   
-
-    # query the selected index
-    query = st.text_input('Enter Your Query')
-    button = st.button(f'Response')
-    
-if __name__ == '__main__':
-    main()
+# select the data to write queries for
+st.write("Select the data that your chatbot should be trained with:")
+data = st.selectbox('Data', ('.txt file (My favorite fruits)'))
