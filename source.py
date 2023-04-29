@@ -1,5 +1,5 @@
 import os
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = 'key'
 
 import streamlit as st
 from llama_index import download_loader
@@ -11,7 +11,7 @@ from langchain import OpenAI
 doc_path = 'EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf'
 index_file = 'index.json'
 
-openai_api_key = st.secrets['openai']["OPENAI_API_KEY"]
+
 
 if 'response' not in st.session_state:
     st.session_state.response = ''
