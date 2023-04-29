@@ -8,7 +8,7 @@ from llama_index import GPTSimpleVectorIndex
 from llama_index import LLMPredictor, GPTSimpleVectorIndex, PromptHelper, ServiceContext
 from langchain import OpenAI
 
-doc_path = './data/'
+doc_path = 'EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf'
 index_file = 'index.json'
 
 if 'response' not in st.session_state:
