@@ -5,7 +5,7 @@ from llama_index.llm_predictor.chatgpt import ChatGPTLLMPredictor
 
 
 index_name = "./index.json"
-documents_folder = "./documents"
+documents_folder = "EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf"
 
 
 @st.cache_resource
