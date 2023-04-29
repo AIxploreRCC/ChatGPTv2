@@ -20,5 +20,5 @@ documents_txt = SimpleDirectoryReader('EAU-Guidelines-on-Renal-Cell-Carcinoma-20
 from llama_index import SimpleDirectoryReader
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('data', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
