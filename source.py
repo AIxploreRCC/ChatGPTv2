@@ -11,6 +11,8 @@ from langchain import OpenAI
 doc_path = 'EAU-Guidelines-on-Renal-Cell-Carcinoma-2023.pdf'
 index_file = 'index.json'
 
+openai_api_key = st.secrets['openai']["OPENAI_API_KEY"]
+
 if 'response' not in st.session_state:
     st.session_state.response = ''
 
