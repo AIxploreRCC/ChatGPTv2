@@ -34,7 +34,7 @@ index = GPTSimpleVectorIndex.from_documents(
 )
 
 # Define a simple Streamlit app
-st.title("Ask Llama")
+st.title("Ask Zino_GPT")
 query = st.text_input("What would you like to ask?", "")
 
 if st.button("Submit"):
