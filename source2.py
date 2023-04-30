@@ -15,6 +15,13 @@ from llama_index import SimpleDirectoryReader
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
+st.set_page_config(page_title="Chat with ZinoGPT")
+st.title("Chat with ZinoGPT")
+st.sidebar.markdown("Developed by Zine-Eddine KHENE](https://twitter.com/ZineEddineKhene)", unsafe_allow_html=True)
+st.sidebar.markdown("gpt-3.5-turbo")
+st.sidebar.markdown("Not optimised")
+st.sidebar.markdown("May run out of OpenAI credits")
+
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
 loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
