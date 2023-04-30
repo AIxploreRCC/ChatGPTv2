@@ -3,9 +3,6 @@ import openai
 import streamlit as st
 from dotenv import load_dotenv
 
-# Load environment variables from the .env file
-load_dotenv()
-openai.api_key = os.getenv('OPENAI_API_KEY')
 
 from llama_index import download_loader
 from llama_index.node_parser import SimpleNodeParser
@@ -15,6 +12,8 @@ from langchain import OpenAI
 
 
 from llama_index import SimpleDirectoryReader
+
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
 loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
