@@ -40,6 +40,13 @@ index = GPTSimpleVectorIndex.from_documents(
     documents, service_context=service_context
 )
 
+# Save your index to a index.json file
+index.save_to_disk('index.json')
+# Load the index from your saved index.json file
+index = GPTSimpleVectorIndex.load_from_disk('index.json', llm_predictor=llm_predictor)
+
+
+
 # Define a simple Streamlit app
 st.title("Ask Zino_GPT")
 query = st.text_input("What would you like to ask?", "")
