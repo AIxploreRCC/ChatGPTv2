@@ -16,7 +16,7 @@ from llama_index import SimpleDirectoryReader
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('Flle', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
 
 # define LLM
