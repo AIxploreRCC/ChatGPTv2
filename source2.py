@@ -32,6 +32,9 @@ llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-
 # Load the index from your saved index.json file
 index = GPTSimpleVectorIndex.load_from_disk('index.json', llm_predictor=llm_predictor)
 
+index = GPTSimpleVectorIndex.from_documents(documents, service_context=service_context)
+index.save_to_disk('index.json')
+
 
 
 # Define a simple Streamlit app
