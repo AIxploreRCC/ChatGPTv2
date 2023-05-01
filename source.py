@@ -19,6 +19,8 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 st.sidebar.markdown("Developed by Zine-Eddine KHENE](https://twitter.com/ZineEddineKhene)", unsafe_allow_html=True)
 st.sidebar.markdown("gpt-3.5-turbo")
 st.sidebar.markdown("CHU Rennes")
+st.sidebar.image("https://urologie-rennes.fr/wp-content/uploads/2020/12/logo-02ai.svg", use_column_width=True)
+st.sidebar.header("Service d'urologie Rennes")
 
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
