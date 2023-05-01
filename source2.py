@@ -29,13 +29,12 @@ documents = loader.load_data()
 # define LLM
 llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
 
-# Load the index from your saved index.json file
-index = GPTSimpleVectorIndex.load_from_disk('index.json', llm_predictor=llm_predictor)
 
-index = GPTSimpleVectorIndex.from_documents(documents, service_context=service_context)
-index.save_to_disk('index.json')
+from llama_index import load_index_from_storage, load_indices_from_storage, load_graph_from_storage
 
-
+# load a single index
+index = load_index_from_storage(storage_context, index_id='index.json') # need to specify index_id if it's ambiguous
+ 
 
 # Define a simple Streamlit app
 st.title("Ask Zino_GPT")
