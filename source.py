@@ -16,7 +16,7 @@ from llama_index import SimpleDirectoryReader
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('Test2', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
 
 # define LLM
@@ -34,7 +34,7 @@ index = GPTSimpleVectorIndex.from_documents(
 )
 
 # Define a simple Streamlit app
-st.title("Ask Zino_GPT")
+st.title("Ask Uro_GPT")
 query = st.text_input("What would you like to ask?", "")
 
 if st.button("Submit"):
