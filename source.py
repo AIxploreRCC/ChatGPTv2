@@ -15,6 +15,13 @@ from llama_index import SimpleDirectoryReader
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
+st.set_page_config(page_title="Chat with Uro-GPT")
+st.title("Chat with ZinoGPT")
+st.sidebar.markdown("Developed by Zine-Eddine KHENE](https://twitter.com/ZineEddineKhene)", unsafe_allow_html=True)
+st.sidebar.markdown("gpt-3.5-turbo")
+st.sidebar.markdown("CHU Rennes")
+
+
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
 loader = SimpleDirectoryReader('Test2', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
