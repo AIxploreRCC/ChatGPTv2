@@ -24,7 +24,7 @@ st.sidebar.header("Service d'urologie Rennes")
 
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('Test2', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('Test4', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
 
 # define LLM
