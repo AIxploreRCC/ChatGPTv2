@@ -23,7 +23,7 @@ st.sidebar.markdown("Not optimised")
 st.sidebar.markdown("May run out of OpenAI credits")
 
 SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
+loader = SimpleDirectoryReader('Test2', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
 
 # define LLM
