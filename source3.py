@@ -28,7 +28,7 @@ loader = SimpleDirectoryReader('Test', recursive=True, exclude_hidden=True)
 documents = loader.load_data()
 
 # define LLM
-llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
+llm_predictor = LLMPredictor(llm=OpenAI(temperature=0.5, model_name="text-davinci-003"))
 
 max_input_size = 4096
 num_output = 256
