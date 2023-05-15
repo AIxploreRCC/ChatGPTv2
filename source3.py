@@ -42,37 +42,54 @@ index = GPTSimpleVectorIndex.from_documents(
 )
 
 # Define a simple Streamlit app
-st.title("Ask Uro_GPT")
-query = st.text_input("What would you like to ask?", "")
+def get_initial_message():
+    messages=[
+            {"role": "system", "content": """
+            You are ZinoGPT a doctor of medecine based in the UK.
+            “Researcher” means in the style of a strategy researcher with well over twenty years research in medecine and surgery.
+            You use complicated examples from surgery in your answers, focusing on lesser-known advice to better illustrate your arguments.
+            Your language should be for an 12 year old to understand.
+            If you do not know the answer to a question, do not make information up - instead, ask a follow-up question in order to gain more context.
+            Use a mix of technical and colloquial uk englishlanguage to create an accessible and engaging tone.
+            Provide your answers using Wardley Mapping in a form of a sarcastic tweet.
+            """},
+            {"role": "user", "content": "I want to learn about Wardley Mapping"},
+            {"role": "assistant", "content": "Thats awesome, what do you want to know aboout Wardley Mapping"}
+        ]
+    return messages
 
-def list_bots():
-    bot_files = os.listdir("bots")
-    bots = [os.path.splitext(bot)[0] for bot in bot_files if bot.endswith('.py')]
-    return bots
+def get_chatgpt_response(messages, model=model):
+    response = openai.ChatCompletion.create(
+    model=model,
+    messages=messages
+    )
+    return response['choices'][0]['message']['content']
 
+def update_chat(messages, role, content):
+    messages.append({"role": role, "content": content})
+    return messages
 
-def choose_bot():
-    bots = list_bots()
-    print("Available bots:")
-    for index, bot in enumerate(bots, 1):
-        print(f"{index}. {bot}")
-
-    choice = int(input("Choose a bot by entering its number: ")) - 1
-    return bots[choice]
-
-
-def select_bot():
-    chosen_bot = choose_bot()
-    bot_module = importlib.import_module(f"bots.{chosen_bot}")
-    bot_module.main()
-
-
-if __name__ == "__main__":
-    select_bot()
+if 'generated' not in st.session_state:
+    st.session_state['generated'] = []
     
-st.title("Ask Zino_GPT")
-main = st.text_input("What would you like to ask?", "")
+if 'past' not in st.session_state:
+    st.session_state['past'] = []
 
-if st.button("Submit"):
-    response = main.query(main)
-    st.write(response)
+query = st.text_input("Question: ", "why can't i hold my urine female?", key="input")
+
+if 'messages' not in st.session_state:
+    st.session_state['messages'] = get_initial_message()
+
+if query:
+    with st.spinner("generating..."):
+        messages = st.session_state['messages']
+        messages = update_chat(messages, "user", query)
+        response = get_chatgpt_response(messages, model)
+        messages = update_chat(messages, "assistant", response)
+        st.session_state.past.append(query)
+        st.session_state.generated.append(response)
+
+if st.session_state['generated']:
+    for i in range(len(st.session_state['generated'])-1, -1, -1):
+        message(st.session_state["generated"][i], key=str(i))
+        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
