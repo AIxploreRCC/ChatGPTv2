@@ -73,4 +73,6 @@ if __name__ == "__main__":
 st.title("Ask Zino_GPT")
 main = st.text_input("What would you like to ask?", "")
 
-
+if st.button("Submit"):
+    response = main.query(main)
+    st.write(response)
