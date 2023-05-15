@@ -1,7 +1,7 @@
 import os
 import openai
 import streamlit as st
-from dotenv import load_dotenv
+import importlib
 
 
 from llama_index import download_loader
