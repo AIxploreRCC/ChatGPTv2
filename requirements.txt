@@ -3,3 +3,5 @@ llama-index==0.5.4
 streamlit==1.19.0
 python-dotenv
 altair==4.0
+streamlit_chat
+datetime
