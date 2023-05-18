@@ -1,4 +1,8 @@
 import os
+import random
+import time
+from datetime import datetime
+from streamlit_chat import message
 import openai
 import streamlit as st
 from dotenv import load_dotenv
@@ -43,8 +47,16 @@ index = GPTSimpleVectorIndex.from_documents(
 
 # Define a simple Streamlit app
 st.title("Ask Uro_GPT")
-query = st.text_input("What would you like to ask?", "")
+user_query = st.text_input("What would you like to ask?", "")
+send_button = st.button("Submit")
 
-if st.button("Submit"):
-    response = index.query(query, streaming=True)
-    st.write(response)
+if send_button:
+    send_message(user_query, st.session_state.all_messages)
+    display_messages(st.session_state.all_messages)
+    
+if msg['user'] == 'user':
+    message(f"You ({msg['time']}): {msg['text']}", is_user=True, key=int(time.time_ns()))
+else:
+    message(f"Bot ({msg['time']}): {msg['text']}", key=int(time.time_ns()))
+    
+
