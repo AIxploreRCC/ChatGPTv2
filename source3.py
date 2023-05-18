@@ -42,6 +42,10 @@ index = GPTSimpleVectorIndex.from_documents(
 )
 
 # Define a simple Streamlit app
+st.title("Ask Uro_GPT")
+query = st.text_input("What would you like to ask?", "")
+
+# Define a simple Streamlit app
 def get_initial_message():
     messages=[
             {"role": "system", "content": """
