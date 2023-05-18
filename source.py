@@ -53,10 +53,5 @@ send_button = st.button("Submit")
 if send_button:
     send_message(user_query, st.session_state.all_messages)
     display_messages(st.session_state.all_messages)
-    
-if msg['user'] == 'user':
-    message(f"You ({msg['time']}): {msg['text']}", is_user=True, key=int(time.time_ns()))
-else:
-    message(f"Bot ({msg['time']}): {msg['text']}", key=int(time.time_ns()))
-    
+ 
 
