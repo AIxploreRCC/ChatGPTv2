@@ -47,7 +47,7 @@ index = GPTSimpleVectorIndex.from_documents(
 
 # Define a simple Streamlit app
 st.title("Ask Uro_GPT")
-user_query = st.text_input("What would you like to ask?", "")
+user_query = st.text_input("You: ","", key= "input")
 send_button = st.button("Submit")
 
 if send_button:
